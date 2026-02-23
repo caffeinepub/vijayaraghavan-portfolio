@@ -1,0 +1,198 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T08:19:36.046Z",
+  "summary": "The implementation provides a solid React-based portfolio website with many of the requested features including component structure, dark/light mode, scroll animations, glassmorphism design, and multiple sections. However, there are critical missing requirements related to Anime.js animations (the specified animation library), specific animation effects, visual design constraints, and performance optimizations.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Name 'Vijayaraghavan' must explode in with letters flying from edges using Anime.js specifically",
+      "reason": "Hero.tsx implements name animation using inline CSS transitions and setTimeout, not Anime.js. The constraint explicitly requires Anime.js for all animations.",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-1",
+      "requirement": "Tagline must have glitch effect animation",
+      "reason": "The tagline has typing animation via CSS class but no glitch visual effect is implemented",
+      "evidence": [
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/index.css"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "requirement": "CTA buttons must have ripple effect on click",
+      "reason": "Buttons have glow effects but no ripple effect on click is implemented",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Avatar floating bob animation must use Anime.js",
+      "reason": "Avatar uses CSS @keyframes 'float' animation instead of Anime.js",
+      "evidence": [
+        "frontend/src/components/Hero.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Navbar items must slide in with elastic ease using Anime.js",
+      "reason": "Navbar.tsx uses CSS transitions and setTimeout, not Anime.js with elastic easing",
+      "evidence": [
+        "frontend/src/components/Navbar.tsx"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "requirement": "Logo must animate/morph on scroll or interaction",
+      "reason": "Logo ('V') has hover scale effect but no morphing animation on scroll",
+      "evidence": [
+        "frontend/src/components/Navbar.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Technology icons must draw in using SVG stroke animation on scroll",
+      "reason": "Skills.tsx does not display individual technology icons with SVG stroke animations. It shows category cards with generic lucide icons (Code2, Database, Wrench) and Progress bars only",
+      "evidence": [
+        "frontend/src/components/Skills.tsx"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "requirement": "Skills must include radial or bar chart visualization animated with Anime.js",
+      "reason": "Skills section uses shadcn Progress components but no radial or bar chart visualization with Anime.js animation is present",
+      "evidence": [
+        "frontend/src/components/Skills.tsx"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "requirement": "Project cards must perform 3D flip on hover revealing project details using Anime.js timeline for rotateX/Y",
+      "reason": "ProjectCard.tsx uses CSS transform for 3D tilt effect but does not implement card flip animation revealing different content, and does not use Anime.js",
+      "evidence": [
+        "frontend/src/components/ProjectCard.tsx"
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "requirement": "Global page load animation sequence with staggered entrance must use Anime.js",
+      "reason": "PageLoadAnimation.tsx uses CSS transitions and setTimeout instead of Anime.js for staggered entrance",
+      "evidence": [
+        "frontend/src/components/PageLoadAnimation.tsx"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Custom useScrollAnimation hook must wrap Anime.js scroll detection logic",
+      "reason": "useScrollAnimation.ts uses IntersectionObserver API, not Anime.js",
+      "evidence": [
+        "frontend/src/hooks/useScrollAnimation.ts"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "requirement": "All animations must use requestAnimationFrame for optimal performance",
+      "reason": "Most animations use CSS transitions/keyframes or setTimeout. Only ParticleBackground.tsx uses requestAnimationFrame. No consistent requestAnimationFrame usage across all animations",
+      "evidence": [
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/PageLoadAnimation.tsx"
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "requirement": "Images must be lazy-loaded to reduce initial page load time",
+      "reason": "No evidence of lazy loading implementation for images. Avatar and project card images do not use lazy loading attributes or mechanisms",
+      "evidence": [
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/ProjectCard.tsx"
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "requirement": "Anime.js library must be installed and properly imported",
+      "reason": "No evidence of Anime.js installation in package.json or imports in any component files. The library is completely absent",
+      "evidence": [
+        "frontend/src/components/Hero.tsx",
+        "frontend/src/components/Skills.tsx",
+        "frontend/src/components/Projects.tsx"
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "requirement": "Color scheme must avoid traditional blue and purple combinations while maintaining vibrancy",
+      "reason": "The design uses cyan (blue variant), magenta (purple variant), and electric-blue, which are traditional blue/purple combinations explicitly prohibited by the requirement",
+      "evidence": [
+        "frontend/src/index.css"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "ThemeProvider from 'next-themes' package",
+      "reason": "BuildRequest specifies React and Tailwind CSS only, with localStorage persistence for theme. The 'next-themes' package is a Next.js-specific library not requested and violates the 'React only' constraint",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "react-icons library (SiGithub, SiLinkedin, SiX icons)",
+      "reason": "Requirement REQ-15 and REQ-10 specify only Lucide React or Heroicons for icons. react-icons is not an approved library per constraints",
+      "evidence": [
+        "frontend/src/components/Contact.tsx"
+      ]
+    },
+    {
+      "description": "Sonner toast notification library",
+      "reason": "No requirement mentions toast notifications or the Sonner library. Contact form success should trigger confetti animation, not toast",
+      "evidence": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Contact.tsx"
+      ]
+    },
+    {
+      "description": "Label component from shadcn/ui",
+      "reason": "REQ-15 lists specific shadcn components to install. Label is not in the required list (Button, Card, Badge, Avatar, Skeleton, Progress, Separator, Toggle, Input, Textarea)",
+      "evidence": [
+        "frontend/src/components/Contact.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.92,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/About.tsx",
+    "frontend/src/components/Contact.tsx",
+    "frontend/src/components/CursorFollower.tsx",
+    "frontend/src/components/Experience.tsx",
+    "frontend/src/components/FloatingBlobs.tsx",
+    "frontend/src/components/Hero.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/PageLoadAnimation.tsx",
+    "frontend/src/components/ParticleBackground.tsx",
+    "frontend/src/components/ProjectCard.tsx",
+    "frontend/src/components/Projects.tsx",
+    "frontend/src/components/Skills.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useCountUp.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useParallax.ts",
+    "frontend/src/hooks/useScrollAnimation.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/anime.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/types/animejs.d.ts",
+    "frontend/src/utils/confetti.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

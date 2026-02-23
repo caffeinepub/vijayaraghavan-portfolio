@@ -1,0 +1,215 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Ultra-modern, highly animated single-page portfolio landing page for Vijayaraghavan (Full-Stack Web & Application Developer). Built with React, Tailwind CSS, shadcn/ui components, and Anime.js for AAA-level visuals featuring particle systems, parallax scrolling, 3D card flips, morphing shapes, glowing effects, typing animations, scroll-triggered reveals, and micro-interactions. Glassmorphism design with dark/light mode toggle.",
+  "architectural_notes": [
+    "React + Tailwind CSS + shadcn/ui components (Button, Card, Badge, Avatar, Skeleton, Progress, Separator, Toggle)",
+    "Anime.js for all animations (cinematic effects, timelines, scroll-triggered)",
+    "Lucide React icons and Heroicons only",
+    "Glassmorphism UI with neubrutalism accents, vibrant gradients (purple-cyan to electric blue)",
+    "Component structure: App.tsx with Hero, About, Skills, Projects, Experience, Contact sections",
+    "Custom hooks: useScrollAnimation.ts for Anime.js scroll spies",
+    "Dark/light mode via shadcn Toggle + localStorage persistence",
+    "Performance: requestAnimationFrame, lazy-loaded images, optimized Anime.js instances"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-fullscreen-hero-section-100vh-with-animated-name-vijayaraghavan-that-explodes-in-with-letters-flying-from-edges-using-anime-js-gradient-text-with-shadow-glow-effect-and-tagline-full-stack-web-application-developer-crafting-pixel-perfect-experiences-with-typing-animation-and-glitch-effect",
+      "title": "Create fullscreen hero section (100vh) with animated name 'Vijayaraghavan' that explodes in with letters flying from edges using Anime.js, gradient text with shadow glow effect, and tagline 'Full-Stack Web & Application Developer | Crafting Pixel-Perfect Experiences' with typing animation and glitch effect",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-hero-background-with-canvas-or-svg-based-particle-system-featuring-endlessly-swirling-dots-animated-gradient-mesh-background-and-mouse-parallax-effect-on-hero-elements",
+      "title": "Implement hero background with canvas or SVG-based particle system featuring endlessly swirling dots, animated gradient mesh background, and mouse parallax effect on hero elements",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-hero-ctas-with-view-projects-button-scrolling-smoothly-to-projects-section-and-contact-button-scrolling-to-contact-section-both-featuring-ripple-and-glow-effects-on-interaction",
+      "title": "Add hero CTAs with 'View Projects' button scrolling smoothly to projects section and 'Contact' button scrolling to contact section, both featuring ripple and glow effects on interaction",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-circular-profile-avatar-with-floating-bob-animation-using-anime-js-in-hero-section",
+      "title": "Display circular profile avatar with floating bob animation using Anime.js in hero section",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-sticky-navigation-bar-with-morphing-logo-navbar-items-that-slide-in-with-elastic-ease-using-anime-js-and-dark-light-mode-toggle-using-shadcn-toggle-component-with-localstorage-persistence",
+      "title": "Create sticky navigation bar with morphing logo, navbar items that slide in with elastic ease using Anime.js, and dark/light mode toggle using shadcn Toggle component with localStorage persistence",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-about-section-with-bio-text-passionate-full-stack-developer-specializing-in-react-node-js-and-scalable-apps-note-fresher-in-freelance-full-stack-web-development-animated-stat-counters-displaying-placeholder-metrics-50-projects-10-clients-99-satisfaction-and-tech-stack-badges-using-shadcn-badge-with-hover-expand-animation",
+      "title": "Build About section with bio text 'Passionate full-stack developer specializing in React, Node.js, and scalable apps. Note: Fresher in freelance full-stack web development', animated stat counters displaying placeholder metrics (50+ Projects, 10+ Clients, 99% Satisfaction), and tech stack badges using shadcn Badge with hover expand animation",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-skills-section-with-grid-of-technology-icons-react-next-js-tailwind-node-mongodb-postgresql-express-python-django-aws-docker-figma-that-draw-in-using-svg-stroke-animation-on-scroll-animated-progress-bars-using-shadcn-progress-component-filling-to-90-100-categorized-by-frontend-backend-tools-with-radial-or-bar-chart-visualization-animated-with-anime-js-and-rotate-pulse-effects-on-icon-hover",
+      "title": "Create Skills section with grid of technology icons (React, Next.js, Tailwind, Node, MongoDB, PostgreSQL, Express, Python/Django, AWS, Docker, Figma) that draw in using SVG stroke animation on scroll, animated progress bars using shadcn Progress component filling to 90-100%, categorized by Frontend/Backend/Tools with radial or bar chart visualization animated with Anime.js, and rotate/pulse effects on icon hover",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-projects-showcase-with-3-6-glassmorphism-cards-using-shadcn-card-component-displaying-placeholder-projects-e-commerce-app-with-react-node-stripe-portfolio-site-with-next-js-shadcn-anime-js-ai-chatbot-with-react-socket-io-openai-staggered-entry-animations-3d-card-flip-on-hover-revealing-project-details-using-anime-js-timeline-for-rotatex-y-image-zoom-effect-and-confetti-animation-on-card-click",
+      "title": "Build Projects showcase with 3-6 glassmorphism cards using shadcn Card component displaying placeholder projects (E-Commerce App with React/Node/Stripe, Portfolio Site with Next.js/shadcn/Anime.js, AI Chatbot with React/Socket.io/OpenAI), staggered entry animations, 3D card flip on hover revealing project details using Anime.js timeline for rotateX/Y, image zoom effect, and confetti animation on card click",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-experience-section-with-vertical-timeline-using-shadcn-components-animated-connecting-dots-and-lines-on-scroll-displaying-fresher-freelance-full-stack-developer-status-with-placeholder-career-entries",
+      "title": "Create Experience section with vertical timeline using shadcn components, animated connecting dots and lines on scroll, displaying fresher freelance full-stack developer status with placeholder career entries",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-contact-section-with-form-using-shadcn-input-textarea-and-button-components-with-submit-success-confetti-animation-display-email-sghvvijayaraghavan-gmail-com-and-render-social-media-icons-linkedin-github-https-github-com-vijay2git-twitter-with-pulse-animation-and-hover-glow-effect-using-lucide-react-or-heroicons",
+      "title": "Build Contact section with form using shadcn Input, Textarea, and Button components with submit success confetti animation, display email sghvvijayaraghavan@gmail.com, and render social media icons (LinkedIn, GitHub https://github.com/vijay2git, Twitter) with pulse animation and hover glow effect using Lucide React or Heroicons",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-global-page-load-animation-sequence-with-staggered-entrance-for-all-elements-using-anime-js-infinite-floating-blobs-shapes-in-background-and-custom-cursor-follower-with-trail-effect",
+      "title": "Implement global page load animation sequence with staggered entrance for all elements using Anime.js, infinite floating blobs/shapes in background, and custom cursor follower with trail effect",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-scroll-triggered-animations-with-staggered-reveals-fade-up-scale-in-effects-for-all-sections-dynamically-filling-progress-bars-and-smooth-scroll-behavior-using-anime-js-with-custom-usescrollanimation-hook",
+      "title": "Implement scroll-triggered animations with staggered reveals (fade-up, scale-in effects) for all sections, dynamically filling progress bars, and smooth scroll behavior using Anime.js with custom useScrollAnimation hook",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-glassmorphism-design-system-with-frosted-glass-cards-using-backdrop-blur-neubrutalism-accents-vibrant-gradients-purple-cyan-to-electric-blue-and-ensure-perfect-responsive-layout-across-mobile-and-desktop-breakpoints-using-tailwind-css-with-touch-friendly-interactions",
+      "title": "Apply glassmorphism design system with frosted glass cards using backdrop blur, neubrutalism accents, vibrant gradients (purple-cyan to electric blue), and ensure perfect responsive layout across mobile and desktop breakpoints using Tailwind CSS with touch-friendly interactions",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-optimize-performance-with-requestanimationframe-for-all-animations-lazy-load-images-and-optimize-anime-js-instances-to-ensure-smooth-60fps-rendering",
+      "title": "Optimize performance with requestAnimationFrame for all animations, lazy-load images, and optimize Anime.js instances to ensure smooth 60fps rendering",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-install-and-configure-anime-js-library-via-npm-or-cdn-import-and-install-shadcn-ui-components-button-card-badge-avatar-skeleton-progress-separator-toggle-input-textarea-using-npx-shadcn-ui-latest-add-with-lucide-react-or-heroicons-for-icons",
+      "title": "Install and configure Anime.js library (via npm or CDN import) and install shadcn/ui components (Button, Card, Badge, Avatar, Skeleton, Progress, Separator, Toggle, Input, Textarea) using npx shadcn-ui@latest add, with Lucide React or Heroicons for icons",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-structure-application-with-app-tsx-as-main-layout-containing-all-sections-separate-component-files-for-hero-tsx-about-tsx-skills-tsx-projects-tsx-experience-tsx-and-contact-tsx-custom-hooks-usescrollanimation-ts-for-anime-js-scroll-detection-and-globals-css-with-tailwind-configuration-plus-custom-keyframes-animations",
+      "title": "Structure application with App.tsx as main layout containing all sections, separate component files for Hero.tsx, About.tsx, Skills.tsx, Projects.tsx, Experience.tsx, and Contact.tsx, custom hooks/useScrollAnimation.ts for Anime.js scroll detection, and globals.css with Tailwind configuration plus custom @keyframes animations",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-and-generate-a-cohesive-visual-identity-with-a-modern-futuristic-aesthetic-featuring-neon-accents-geometric-patterns-and-dynamic-energy-that-complements-the-glassmorphism-and-neubrutalism-styles-avoiding-traditional-blue-and-purple-color-schemes-and-apply-this-theme-consistently-across-all-ui-elements-typography-spacing-and-micro-interactions",
+      "title": "Design and generate a cohesive visual identity with a modern, futuristic aesthetic featuring neon accents, geometric patterns, and dynamic energy that complements the glassmorphism and neubrutalism styles, avoiding traditional blue and purple color schemes, and apply this theme consistently across all UI elements, typography, spacing, and micro-interactions",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Fullscreen hero section with animated name explosion, typing tagline with glitch effect, canvas/SVG particle system, mouse parallax, floating profile avatar, and animated gradient mesh background",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Sticky navigation bar with morphing logo, slide-in items with elastic ease, and dark/light mode toggle using shadcn Toggle + localStorage",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "About section with bio, animated stat counters (projects/clients/satisfaction), and tech stack badges with hover expand effects",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Skills section with icon grid (React, Next.js, Tailwind, Node, MongoDB, etc.) featuring SVG stroke draw-in animations, animated progress bars, and categorized radial/bar charts with Anime.js fill",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Projects showcase with 3-6 glassmorphism cards (E-Commerce App, Portfolio Site, AI Chatbot), staggered entry animations, 3D hover flip reveals, image zoom, and confetti on click",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Experience section with vertical timeline, animated connecting dots/lines on scroll, displaying career history (fresher freelance full-stack developer)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Contact section with animated form (shadcn Input, Textarea, Button), success confetti animation, pulsing social icons (LinkedIn, GitHub, Twitter) with hover glow, using email sghvvijayaraghavan@gmail.com and GitHub https://github.com/vijay2git",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Global animations: page load stagger sequence, infinite floating blobs/shapes, custom cursor follower with trail effect, scroll-triggered reveals (fade-up, scale-in)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Responsive design optimized for mobile and desktop using Tailwind breakpoints, touch-friendly interactions, performance optimizations with requestAnimationFrame and lazy-loaded images",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Vijayaraghavan Portfolio",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

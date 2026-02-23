@@ -1,0 +1,470 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Ultra-Modern Animated Portfolio Landing Page for Vijayaraghavan",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create fullscreen hero section with animated name explosion, gradient text effects, and typing animation with glitch effect",
+      "acceptanceCriteria": [
+        "Hero section occupies full viewport height (100vh)",
+        "Name letters animate in from screen edges using Anime.js",
+        "Text has gradient effect with glowing shadow",
+        "Tagline animates with typing effect and glitch visual",
+        "Animations trigger on page load"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "create",
+          "description": "Create Hero component with fullscreen layout (100vh), animated name 'Vijayaraghavan' using Anime.js letter explosion from edges, gradient text with shadow glow effect, and tagline 'Full-Stack Web & Application Developer | Crafting Pixel-Perfect Experiences' with typing animation and glitch effect. Implement letter splitting logic and coordinate Anime.js timeline for staggered entrance."
+        },
+        {
+          "path": "frontend/src/hooks/useTextAnimation.ts",
+          "operation": "create",
+          "description": "Create custom hook for typing animation effect and glitch text animation using Anime.js. Handle character-by-character reveal with configurable speed and implement glitch visual effect with random character swaps."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement hero background with particle system, animated gradient mesh, and mouse parallax effect",
+      "acceptanceCriteria": [
+        "Particle system renders using canvas or SVG",
+        "Particles animate in continuous swirling motion",
+        "Gradient mesh background animates smoothly",
+        "Mouse movement creates parallax effect on hero elements",
+        "Performance optimized using requestAnimationFrame"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ParticleBackground.tsx",
+          "operation": "create",
+          "description": "Create ParticleBackground component using HTML canvas for particle system with endlessly swirling dots. Implement continuous animation loop using requestAnimationFrame for optimal performance. Add animated gradient mesh overlay and integrate mouse parallax tracking for hero elements."
+        },
+        {
+          "path": "frontend/src/hooks/useParallax.ts",
+          "operation": "create",
+          "description": "Create custom hook for mouse parallax effect that tracks mouse position and calculates transform values for parallax-enabled elements. Return transform CSS properties for smooth parallax motion."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add hero CTAs with smooth scroll navigation and interactive ripple/glow effects",
+      "acceptanceCriteria": [
+        "Two CTA buttons render in hero section",
+        "'View Projects' button scrolls smoothly to projects section",
+        "'Contact' button scrolls smoothly to contact section",
+        "Buttons display ripple effect on click",
+        "Buttons have glow effect on hover"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Add two CTA buttons using shadcn Button component: 'View Projects' and 'Contact'. Implement smooth scroll behavior to respective sections using scrollIntoView with smooth behavior. Add ripple effect on click and glow effect on hover using CSS animations and Anime.js."
+        },
+        {
+          "path": "frontend/src/hooks/useRippleEffect.ts",
+          "operation": "create",
+          "description": "Create custom hook for ripple effect animation on button clicks. Calculate click position and create ripple animation using Anime.js with expanding circle and fade-out effect."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Display circular profile avatar with floating bob animation",
+      "acceptanceCriteria": [
+        "Avatar renders as circular image using shadcn Avatar component",
+        "Avatar has continuous subtle bob/float animation",
+        "Animation loops infinitely with smooth easing"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Add circular profile avatar using shadcn Avatar component with placeholder image. Implement continuous floating bob animation using Anime.js with translateY transform, infinite loop, and easeInOutSine easing for smooth natural motion."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Create sticky navigation with morphing logo, animated menu items, and dark/light mode toggle",
+      "acceptanceCriteria": [
+        "Navigation bar remains fixed at top during scroll",
+        "Logo animates/morphs on scroll or interaction",
+        "Navigation items animate in with elastic easing on page load",
+        "Dark/light mode toggle implemented with shadcn Toggle",
+        "Theme preference persists in localStorage",
+        "All sections accessible from navigation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Navbar.tsx",
+          "operation": "create",
+          "description": "Create sticky navigation component with fixed positioning, morphing logo animation on scroll using Anime.js. Add navigation links for all sections (About, Skills, Projects, Experience, Contact) with elastic slide-in animation. Implement dark/light mode toggle using shadcn Toggle component with localStorage persistence. Include smooth scroll to sections on link click."
+        },
+        {
+          "path": "frontend/src/hooks/useTheme.ts",
+          "operation": "create",
+          "description": "Create custom hook for theme management with dark/light mode state, localStorage persistence, and document class updates. Return current theme and toggle function for use with shadcn Toggle component."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render Navbar component at the top of the layout. Wire theme state from useTheme hook to apply theme classes to root element."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build About section with bio, animated stat counters, and tech stack badges",
+      "acceptanceCriteria": [
+        "About section displays bio text mentioning fresher status",
+        "Three stat counters animate from 0 to target values on scroll into view",
+        "Tech stack badges render using shadcn Badge component",
+        "Badges expand with animation on hover",
+        "Section uses glassmorphism card styling"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/About.tsx",
+          "operation": "create",
+          "description": "Create About section with glassmorphism card containing bio text 'Passionate full-stack developer specializing in React, Node.js, and scalable apps. Note: Fresher in freelance full-stack web development'. Add three animated stat counters (50+ Projects, 10+ Clients, 99% Satisfaction) that count up using Anime.js when scrolled into view. Display tech stack badges (React, Node.js, TypeScript, etc.) using shadcn Badge component with hover expand animation."
+        },
+        {
+          "path": "frontend/src/hooks/useCountUp.ts",
+          "operation": "create",
+          "description": "Create custom hook for animated counter effect that uses Anime.js to animate numbers from 0 to target value. Accept target number, duration, and easing parameters. Return current count value for display."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Create Skills section with animated icon grid, progress bars, and categorized visualization",
+      "acceptanceCriteria": [
+        "Skills grid displays icons for all specified technologies",
+        "Icons animate with SVG stroke draw-in effect when scrolled into view",
+        "Progress bars animate from 0 to 90-100% using shadcn Progress",
+        "Skills categorized into Frontend, Backend, and Tools sections",
+        "Category charts animate with Anime.js fill effect",
+        "Icons rotate or pulse on hover",
+        "Animations stagger for visual impact"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Skills.tsx",
+          "operation": "create",
+          "description": "Create Skills section with grid of technology icons (React, Next.js, Tailwind, Node, MongoDB, PostgreSQL, Express, Python/Django, AWS, Docker, Figma) using Lucide React or Heroicons. Implement SVG stroke draw-in animation on scroll using Anime.js. Add animated progress bars using shadcn Progress component that fill from 0 to 90-100%. Organize skills into Frontend, Backend, and Tools categories with radial or bar chart visualization animated using Anime.js. Add rotate/pulse effects on icon hover with staggered entrance animations."
+        },
+        {
+          "path": "frontend/src/components/SkillIcon.tsx",
+          "operation": "create",
+          "description": "Create reusable SkillIcon component that wraps technology icons with SVG stroke animation logic using Anime.js. Implement hover effects (rotate/pulse) and support for progress bar display using shadcn Progress component."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build Projects showcase with glassmorphism cards, 3D flip animations, and confetti effects",
+      "acceptanceCriteria": [
+        "3-6 project cards render with glassmorphism styling using shadcn Card",
+        "Cards display project name, description, tech stack, and links (Live/Demo/GitHub)",
+        "Cards animate in with staggered timing on scroll",
+        "Cards perform 3D flip animation on hover using Anime.js rotateX/Y",
+        "Project images zoom on hover",
+        "Confetti animation triggers on card click",
+        "Cards lift/tilt with 3D perspective effect"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "create",
+          "description": "Create Projects section with 3-6 glassmorphism cards using shadcn Card component. Display placeholder projects (E-Commerce App with React/Node/Stripe, Portfolio Site with Next.js/shadcn/Anime.js, AI Chatbot with React/Socket.io/OpenAI) with project name, description, tech stack, and links. Implement staggered entry animations on scroll, 3D card flip on hover using Anime.js timeline with rotateX/Y, image zoom effect, and confetti animation on card click."
+        },
+        {
+          "path": "frontend/src/components/ProjectCard.tsx",
+          "operation": "create",
+          "description": "Create reusable ProjectCard component using shadcn Card with glassmorphism styling. Implement 3D flip animation on hover using Anime.js rotateX/Y transforms with timeline, image zoom effect on hover, card lift/tilt with 3D perspective, and confetti trigger on click."
+        },
+        {
+          "path": "frontend/src/utils/confetti.ts",
+          "operation": "create",
+          "description": "Create confetti animation utility using canvas and Anime.js for particle burst effect. Export triggerConfetti function that creates colorful particle explosion at specified coordinates with physics-based motion."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create Experience section with animated vertical timeline",
+      "acceptanceCriteria": [
+        "Vertical timeline renders using shadcn components",
+        "Timeline displays placeholder career entries reflecting fresher status",
+        "Dots and connecting lines animate as user scrolls",
+        "Timeline is responsive on mobile and desktop",
+        "Animation reveals entries progressively"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Experience.tsx",
+          "operation": "create",
+          "description": "Create Experience section with vertical timeline using shadcn Separator and Card components. Display placeholder career entries reflecting fresher freelance full-stack developer status. Implement animated connecting dots and lines that draw in on scroll using Anime.js with strokeDashoffset animation. Ensure responsive layout for mobile and desktop with progressive reveal animation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Build Contact section with form, social icons, and success animations",
+      "acceptanceCriteria": [
+        "Contact form renders with shadcn Input, Textarea, and Button",
+        "Form displays email address sghvvijayaraghavan@gmail.com",
+        "Confetti animation plays on successful form submission",
+        "Social icons for LinkedIn, GitHub, and Twitter render with pulse animation",
+        "GitHub icon links to https://github.com/vijay2git",
+        "Social icons glow on hover",
+        "Icons use Lucide React or Heroicons library"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "create",
+          "description": "Create Contact section with form using shadcn Input, Textarea, and Button components. Display email address sghvvijayaraghavan@gmail.com prominently. Add form validation and submit handler that triggers confetti animation on success. Render social media icons (LinkedIn, GitHub https://github.com/vijay2git, Twitter) using Lucide React or Heroicons with continuous pulse animation and hover glow effect."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Implement global page load animations, floating blobs, and custom cursor effect",
+      "acceptanceCriteria": [
+        "All page elements animate in with staggered timing on initial load",
+        "Background features infinite floating blob/shape animations",
+        "Custom cursor follower with trail effect tracks mouse movement",
+        "Animations are smooth and performant",
+        "Cursor effect disabled or adapted for touch devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PageLoadAnimation.tsx",
+          "operation": "create",
+          "description": "Create PageLoadAnimation component that orchestrates staggered entrance animations for all page elements using Anime.js timeline. Implement on initial page load with cascading reveal effects across sections."
+        },
+        {
+          "path": "frontend/src/components/FloatingBlobs.tsx",
+          "operation": "create",
+          "description": "Create FloatingBlobs component with infinite floating blob/shape animations in background using SVG or canvas. Implement continuous motion with Anime.js using bezier paths and varying speeds for organic feel."
+        },
+        {
+          "path": "frontend/src/components/CursorFollower.tsx",
+          "operation": "create",
+          "description": "Create custom cursor follower component with trail effect that tracks mouse movement. Use Anime.js for smooth following animation with delay for trail effect. Implement touch device detection to disable on mobile."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Import and render PageLoadAnimation, FloatingBlobs, and CursorFollower components in the main layout to provide global animations and effects throughout the application."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Implement scroll-triggered animations with staggered reveals and dynamic progress bars",
+      "acceptanceCriteria": [
+        "Sections animate with fade-up and scale-in effects when scrolled into view",
+        "Progress bars animate fill dynamically based on scroll position",
+        "Custom useScrollAnimation hook wraps Anime.js scroll detection logic",
+        "Animations stagger for visual variety",
+        "Scroll behavior is smooth across all sections"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useScrollAnimation.ts",
+          "operation": "create",
+          "description": "Create custom hook for scroll-triggered animations using Anime.js scroll detection. Implement intersection observer logic to detect when elements enter viewport. Return animation trigger function and visibility state for components to use. Support fade-up, scale-in, and staggered reveal effects."
+        },
+        {
+          "path": "frontend/src/components/About.tsx",
+          "operation": "modify",
+          "description": "Integrate useScrollAnimation hook to trigger fade-up and scale-in animations when About section enters viewport. Apply staggered animation timing for child elements."
+        },
+        {
+          "path": "frontend/src/components/Skills.tsx",
+          "operation": "modify",
+          "description": "Integrate useScrollAnimation hook for fade-up and scale-in effects. Implement dynamic progress bar fill animations using shadcn Progress component that trigger when section enters viewport."
+        },
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "modify",
+          "description": "Integrate useScrollAnimation hook to trigger staggered card entrance animations with fade-up and scale-in effects when Projects section scrolls into view."
+        },
+        {
+          "path": "frontend/src/components/Experience.tsx",
+          "operation": "modify",
+          "description": "Integrate useScrollAnimation hook to progressively reveal timeline entries with connecting line animations as user scrolls through Experience section."
+        },
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "modify",
+          "description": "Integrate useScrollAnimation hook to trigger fade-up animation for Contact section elements when scrolled into view."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Apply glassmorphism design system with vibrant gradients and responsive layout",
+      "acceptanceCriteria": [
+        "All cards use glassmorphism effect with backdrop blur",
+        "Design includes neubrutalism accents where appropriate",
+        "Gradient color scheme features purple-cyan to electric blue transitions",
+        "Layout is fully responsive using Tailwind breakpoints (sm, md, lg, xl)",
+        "All interactive elements are touch-friendly on mobile devices",
+        "Design maintains visual consistency across screen sizes"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add glassmorphism base styles with backdrop blur effects, vibrant gradient definitions (purple-cyan to electric blue), neubrutalism accent styles, and responsive design utilities. Define custom CSS classes for frosted glass cards, gradient backgrounds, and glow effects. Include Tailwind breakpoint optimizations for mobile and desktop layouts."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind configuration with custom gradient colors (purple-cyan to electric blue), glassmorphism utilities, backdrop blur presets, and responsive breakpoint customizations. Add custom animation keyframes and timing functions for smooth transitions."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Optimize performance with requestAnimationFrame, lazy-loading, and Anime.js cleanup",
+      "acceptanceCriteria": [
+        "All animations use requestAnimationFrame for optimal performance",
+        "Images are lazy-loaded to reduce initial page load time",
+        "Anime.js instances are properly cleaned up to prevent memory leaks",
+        "Page maintains 60fps during animations and scrolling",
+        "Performance is smooth on both desktop and mobile devices"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/ParticleBackground.tsx",
+          "operation": "modify",
+          "description": "Ensure particle animation loop uses requestAnimationFrame for optimal performance. Implement cleanup logic in useEffect to cancel animation frame on unmount."
+        },
+        {
+          "path": "frontend/src/hooks/useScrollAnimation.ts",
+          "operation": "modify",
+          "description": "Add Anime.js instance cleanup logic in hook cleanup function to prevent memory leaks. Ensure all animation timelines are properly paused and removed when components unmount."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Implement lazy-loading for profile avatar image using loading='lazy' attribute. Ensure all Anime.js animations have proper cleanup in useEffect hooks."
+        },
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "modify",
+          "description": "Add lazy-loading for all project images using loading='lazy' attribute to optimize initial page load. Implement Anime.js cleanup for card animations."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Install and configure Anime.js, shadcn/ui components, and icon libraries",
+      "acceptanceCriteria": [
+        "Anime.js is properly installed and imported",
+        "All required shadcn/ui components are installed via CLI",
+        "Lucide React or Heroicons library is installed for icon usage",
+        "All dependencies are listed in package.json",
+        "Components are properly imported and functional"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/package.json",
+          "operation": "modify",
+          "description": "Add animejs package as dependency. Add lucide-react package for icon library. Ensure all shadcn/ui peer dependencies are present (class-variance-authority, clsx, tailwind-merge, etc.)."
+        },
+        {
+          "path": "frontend/src/lib/anime.ts",
+          "operation": "create",
+          "description": "Create Anime.js utility module that imports and exports anime for consistent usage across components. Include TypeScript types and helper functions for common animation patterns."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Structure application with main layout and modular section components",
+      "acceptanceCriteria": [
+        "App.tsx serves as main entry point composing all section components",
+        "Each section (Hero, About, Skills, Projects, Experience, Contact) has its own component file",
+        "useScrollAnimation.ts hook provides reusable Anime.js scroll logic",
+        "globals.css contains Tailwind directives and custom @keyframes animations",
+        "File structure is clean and maintainable"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Structure App.tsx as main layout composing all section components in order: Navbar, Hero, About, Skills, Projects, Experience, Contact. Add FloatingBlobs, CursorFollower, and PageLoadAnimation for global effects. Wrap with theme provider from useTheme hook."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add Tailwind directives (@tailwind base, @tailwind components, @tailwind utilities). Define custom @keyframes animations for base effects (glow, pulse, float, glitch). Include glassmorphism and gradient base styles."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Design cohesive visual identity with futuristic aesthetic and dynamic energy",
+      "acceptanceCriteria": [
+        "Visual design uses futuristic aesthetic with neon accents and geometric patterns",
+        "Color scheme avoids traditional blue/purple combinations while maintaining vibrancy",
+        "Typography choices reflect modern, tech-forward personality",
+        "Spacing and layout create dynamic, energetic feel",
+        "Theme is applied consistently across all components and sections",
+        "Micro-interactions reinforce the futuristic aesthetic"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define cohesive visual identity with futuristic aesthetic featuring neon accents (electric cyan, neon green, vibrant magenta), geometric patterns, and dynamic gradients that avoid traditional blue/purple. Add custom CSS variables for consistent color palette across light and dark modes. Include typography scale with modern tech-forward font choices and spacing utilities that create energetic layout rhythm."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Configure custom color palette with neon accents and vibrant gradients that complement glassmorphism while avoiding traditional blue/purple schemes. Add custom font families for modern tech aesthetic. Define spacing scale and animation configurations that reinforce dynamic, futuristic feel."
+        },
+        {
+          "path": "frontend/src/components/Hero.tsx",
+          "operation": "modify",
+          "description": "Apply futuristic visual identity with neon gradient text effects, geometric patterns in background, and dynamic micro-interactions using custom color palette and typography from theme configuration."
+        },
+        {
+          "path": "frontend/src/components/About.tsx",
+          "operation": "modify",
+          "description": "Apply consistent theme styling with glassmorphism cards, neon accent borders, and energetic spacing that matches the futuristic aesthetic. Use geometric patterns in card backgrounds."
+        },
+        {
+          "path": "frontend/src/components/Skills.tsx",
+          "operation": "modify",
+          "description": "Apply theme styling with neon-accented skill icons, futuristic progress bar designs, and geometric category dividers that reinforce the modern aesthetic."
+        },
+        {
+          "path": "frontend/src/components/Projects.tsx",
+          "operation": "modify",
+          "description": "Apply consistent glassmorphism styling with neon accent highlights on hover, geometric pattern overlays, and dynamic card interactions that complement the futuristic theme."
+        },
+        {
+          "path": "frontend/src/components/Experience.tsx",
+          "operation": "modify",
+          "description": "Style timeline with neon-accented connecting lines, geometric node markers, and glassmorphism entry cards that maintain visual consistency with the futuristic theme."
+        },
+        {
+          "path": "frontend/src/components/Contact.tsx",
+          "operation": "modify",
+          "description": "Apply theme styling to form inputs with neon focus states, glassmorphism form container, and social icons with neon glow effects that match the overall futuristic aesthetic."
+        }
+      ]
+    }
+  ]
+}
